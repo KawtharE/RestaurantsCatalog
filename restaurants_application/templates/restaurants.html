@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>List of All Available Restaurants</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1>Restaurants Catalog</h1>
+		<span><i class="fas fa-utensils"></i></span>		
+	</header>
+	<div class="container1">
+		<div class="messages">
+			{%with messages = get_flashed_messages()%}
+				{%if messages%}
+					<ul>
+					{%for message in messages%}
+						<li><strong>&#8277; {{message}}</strong></li>
+					{%endfor%}
+					</ul>
+				{%endif%}
+			{%endwith%}
+		</div>	
+		<div class="restaurantsList">
+			<ul class="list">
+				{%for restaurant in restaurants%}
+					<li><span>{{restaurant.name}}</span>
+					<a href="{{url_for('showRestaurant', restaurant_id=restaurant.id)}}">Check</a>
+					<a href="{{url_for('editRestaurant', restaurant_id=restaurant.id)}}">Edit</a>
+					<a href="{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}">Delete</a>
+					</li>
+					<hr>
+				{%endfor%}
+			</ul>
+		</div>
+		<div class="new">
+			<a id="addNewRestaurant" href="{{url_for('addNewRestaurant')}}">&#8314;Add New Restaurant</a>
+		</div>
+	</div>
+</body>
+</html>

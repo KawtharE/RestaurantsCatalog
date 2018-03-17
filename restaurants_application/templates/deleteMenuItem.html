@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delete Item From The Menu</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<header class="menuHeader">
+		<h1>Are you sure you want to delete {{menu.name}} from the Menu?</h1>
+	</header>
+	<div class="ItemForm">
+	<form id="deleteItem" method="POST" action="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=menu.id)}}">
+		<span>Click the delete button if you want to delete the Menu Item or just cancel your action if you are not sure yet!</span>
+		<br><br>
+		<input type="submit" value="Delete">
+		<a id="cancel" href="{{url_for('showRestaurant', restaurant_id=restaurant.id)}}">Cancel</a>
+	</form>	
+	</div>
+</body>
+</html>

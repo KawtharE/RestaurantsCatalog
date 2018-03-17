@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add New Menu Item</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<header class="menuHeader">
+	<h1>Add New Menu Item to the restaurant &#8280; {{restaurant.name}} &#8280;</h1>
+	</header>
+	<div class="ItemForm">
+	<form method="POST" action="{{url_for('addNewItem', restaurant_id=restaurant.id)}}">
+		<label for="name">Item Name:</label>
+		<input type="text" name="name" placeholder="Item Name" required="required">
+		<br>
+		<label for="description">Item Description:</label>
+		<input type="text" name="description" placeholder="Item Description">
+		<br>
+		<label for="price">Item Price:</label>
+		<input type="text" name="price" required="required" placeholder="Item Price">
+		<br>
+		<label for="categorie">Item Categorie: </label>
+		<select name="categorie">
+			<option value="Burgers">Burgers</option>
+			<option value="Hot Dogs">Hot Dogs</option>
+			<option value="Drinks">Drinks</option>
+			<option value="Appetizer">Appetizer</option>
+		</select>
+		<br><br>
+		<input type="submit" value="Create">
+		<a id="cancel" href="{{url_for('showRestaurant', restaurant_id=restaurant.id)}}">Cancel</a>
+	</form>
+	</div>
+	
+</body>
+</html>

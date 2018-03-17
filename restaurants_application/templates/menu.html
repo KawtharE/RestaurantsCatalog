@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Menu</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<header class="menuHeader">
+		<h1><a id="back" href="{{url_for('showAllRestaurants')}}">&#11176;</a> The Menu of the Restaurant &#8280;{{restaurant.name}}&#8280;</h1>		
+	</header>
+
+	<div class="container2">
+		<div class="messages">
+			{%with messages = get_flashed_messages()%}
+				{%if messages%}
+					<ul>
+					{%for message in messages%}
+						<li><strong>&#8277; {{message}}</strong></li>
+					{%endfor%}
+					</ul>
+				{%endif%}
+			{%endwith%}	
+			</div>
+		<div class="items">
+			<div class="container3">
+			
+			<div class="Burgers">
+			<h2>&#10032;&#10032;&#10032; Burgers &#10032;&#10032;&#10032;</h2>
+			<ul>
+			{%for item in restaurant_menu%}
+				{%if item.categorie == 'Burgers'%}
+					<li><span id="name">{{item.name}}</span><span id="price">{{item.price}}</span></li><br>
+					<li id="description">{{item.description}}</li><br>
+					<div class="itemDelEd">
+					<a href="{{url_for('editMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Edit</a>
+					<a href="{{url_for('deleteMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Delete</a>
+					</div>
+					<br>
+					<hr>
+				{%endif%}
+			{%endfor%}
+			</ul>
+			</div>
+			<div class="Hot_Dogs">
+			<h2>&#10032;&#10032;&#10032; Hot Dogs &#10032;&#10032;&#10032;</h2>
+			<ul>
+			{%for item in restaurant_menu%}
+				{%if item.categorie == 'Hot Dogs'%}
+					<li><span id="name">{{item.name}}</span><span id="price">{{item.price}}</span></li><br>
+					<li id="description">{{item.description}}</li><br>
+					<div class="itemDelEd">
+					<a href="{{url_for('editMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Edit</a>
+					<a href="{{url_for('deleteMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Delete</a>
+					</div>
+					<br>
+					<hr>
+				{%endif%}
+			{%endfor%}
+			</ul>
+			</div>
+			<div class="Drinks">
+			<h2>&#10032;&#10032;&#10032; Drinks &#10032;&#10032;&#10032;</h2>
+			<ul>
+			{%for item in restaurant_menu%}
+				{%if item.categorie == 'Drinks'%}
+					<li><span id="name">{{item.name}}</span><span id="price">{{item.price}}</span></li><br>
+					<li id="description">{{item.description}}</li><br>
+					<div class="itemDelEd">
+					<a href="{{url_for('editMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Edit</a>
+					<a href="{{url_for('deleteMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Delete</a>
+					</div>
+					<br>
+					<hr>
+				{%endif%}
+			{%endfor%}
+			</ul>
+			</div>
+			<div class="Appetizer">
+			<h2>&#10032;&#10032;&#10032; Appetizer &#10032;&#10032;&#10032;</h2>
+			<ul>
+			{%for item in restaurant_menu%}
+				{%if item.categorie == 'Appetizer'%}
+					<li><span id="name">{{item.name}}</span><span id="price">{{item.price}}</span></li><br>
+					<li id="description">{{item.description}}</li><br>
+					<div class="itemDelEd">
+					<a href="{{url_for('editMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Edit</a>
+					<a href="{{url_for('deleteMenuItem', restaurant_id=item.restaurant_id, menu_id=item.id)}}">Delete</a>
+					</div>
+					<br>
+					<hr>
+				{%endif%}
+			{%endfor%}
+			</ul>
+			</div>
+		</div>
+		</div>
+		<div class="newMenu">
+			<a id="newItem" href="{{url_for('addNewItem', restaurant_id=restaurant.id)}}">&#8314;Add New Item</a>
+		</div>
+	</div>
+</body>
+</html>

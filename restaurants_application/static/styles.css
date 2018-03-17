@@ -1,0 +1,307 @@
+body{
+	width: 100%;
+	margin: auto;
+}
+header{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #80CBC4;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+header > h1{
+	width: 80%;
+	text-align: center;
+	color: #004D40;
+}
+header span{	
+	width: 10%;
+	font-size: 48px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-right: auto;
+	border: 5px solid #FFAB00;
+	border-radius: 50%;
+	color: #FFAB00;
+	background-color:#26A69A;;
+}
+@media screen and (max-width: 350px){
+	header span{
+		font-size: 32px;
+		padding: auto;
+		padding-right: 5px;
+		height: 50px;
+	}
+}
+@media screen and (min-width: 351px) and (max-width: 530px){
+	header span{
+		font-size: 32px;
+		padding: auto;
+		width: 11%;
+	}
+}
+@media screen and (min-width: 600px){
+	header span{
+		width: 8%;
+	}
+}
+@media screen and (min-width: 700px){
+	header span{
+		width: 7%;
+	}
+}
+@media screen and (min-width: 800px){
+	header span{
+		width: 6%;
+	}
+}
+@media screen and (min-width: 900px){
+	header span{
+		width: 5%;
+	}
+}
+div.container1{
+	width: 100%;
+	height: 300px;
+	margin-top: 5%;
+	display: flex;
+	flex-wrap: wrap;
+}
+div.new{
+	width: 20%;
+	color: #795548;
+}
+div.messages{
+	width: 100%;
+	background-color: #B9F6CA;
+	color: #00C853;
+	text-align: center;
+	margin-bottom: 25px;
+	position: relative;
+}
+div.messages ul{
+	list-style-type: none;
+}
+div.restaurantsList{
+	width: 50%;
+	height: 400px;
+	margin-left: 15%;
+	margin-right:5%;
+	padding-right: 25px;
+	overflow-y: auto;
+	text-align: center;
+	border: 1px solid #26A69A;
+	border-radius: 5%;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+	margin-top: 15px;
+	margin-bottom: 15px; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	margin-top: 15px;
+	margin-bottom: 15px;
+    background: #B2DFDB; 
+    border-radius: 10px;
+}
+/*::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}*/
+.list{
+	list-style-type: none;
+}
+.list a{
+	float: right;
+	margin-right: 10px;
+	text-decoration: none;
+	color: #FFAB00;
+	font-weight: bold;
+}
+.list a:hover{
+	color: #26A69A;
+}
+.list span{
+	color: #263238;
+}
+a{
+	text-decoration: none;
+	color: #26A69A;
+	font-weight: bold;
+}
+a:hover{
+	color: #FFAB00;
+}
+div.restaurant{
+	width: 80%;
+	text-align: center;
+	margin-top: 10%;
+	margin-right: 7%;
+	margin-left: 5%;
+	padding: 5%;
+	border: 1px solid #FFAB00;
+}
+div.restaurant h1{
+	color: #FF3D00;
+}
+div.restaurant input#addBtn, div.restaurant input#deleteBtn, div.restaurant input#updateBtn{
+	background-color: #FF8F00;
+	font-weight: bold;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: 25px;
+	color: #263238;	
+	border: none;
+	border-radius: 5px;
+}
+div.restaurant input#addBtn:hover, div.restaurant input#deleteBtn:hover, div.restaurant input#updateBtn:hover{
+	background-color: #E65100;
+	color: #FFFFFF; 	
+}
+div.restaurant a#cancel{
+	margin-top: 15px;
+	margin:auto;
+}
+header.menuHeader{
+	margin: 5%;
+	background-color: #FFFFFF;
+	border: 1px solid #004D40;
+}
+header.menuHeader a#back{
+	margin-right: 5%;
+}
+div.container2{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+div.messages{
+	width:100%;
+
+}
+div.newMenu{
+	width: 10%;
+	padding-top: 10px;
+	color: #795548;
+}
+div.newMenu a#newItem{
+	color: #26A69A;
+}
+div.new a#addNewRestaurant{
+	color: #26A69A;
+}
+div.items{
+	width: 80%;
+	border: 1px solid #26A69A;
+	margin: 10px;
+	padding: 5px;
+}
+div.items ul{
+	list-style-type: none;
+}
+div.container3{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding-left: 1%;
+}
+div.container3 div.Burgers{
+	width: 45%;
+	order: 1;
+	border-right: 1px dashed #26A69A;
+	border-bottom: 1px dashed #26A69A;
+	padding-right: 4%;
+}
+div.container3 div.Hot_Dogs{
+	width: 45%;
+	order: 2;
+	border-bottom: 1px dashed #26A69A;
+	padding-right: 4%;
+}
+div.container3 div.Drinks{
+	width: 45%;
+	order: 3;
+	border-right: 1px dashed #26A69A;
+	padding-right: 4%;
+}
+div.container3 div.Appetizer{
+	width: 45%;
+	order: 4;
+	padding-right: 4%;
+}
+div.items h2{
+	text-align: center;
+	color: #FF3D00;
+}
+div.container3 li#description{
+	display: block;
+	margin: auto;
+	color: #757575;
+}
+div.itemDelEd{
+	float: right;
+}
+div.items span#name{
+	font-weight: bold;
+}
+div.items span#price{
+	font-weight: bold;
+	float: right;
+	color: #26A69A;
+}
+div.ItemForm{
+	border: 1px solid #26A69A;
+	padding: 5%;
+	margin: 10%;
+	margin-bottom: auto;
+}
+div.ItemForm form{
+    margin-left: 10%;
+    margin-right: auto;
+    text-align: justify;
+}
+
+div.ItemForm form input[type=text], div.ItemForm form select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    float: right;
+    width: 70%;
+}
+
+div.ItemForm form label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+div.ItemForm form input[type=submit] {
+    background-color: #FF8F00;
+    color: #263238;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+div.ItemForm form input[type=submit]:hover {
+    background-color: #E65100;
+    color: #FFFFFF;
+}
+div.ItemForm a#cancel{
+	float: right;
+	margin-right: 15px;
+	margin-top: 15px;
+}
+div.ItemForm form#deleteItem{
+	margin-left: 0;
+}

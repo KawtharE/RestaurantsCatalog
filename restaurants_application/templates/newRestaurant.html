@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add New Restaurant</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<div class="restaurant">
+		<h1>Add a New Restaurant</h1>
+		<form method="POST" action="{{url_for('addNewRestaurant')}}">
+			<label for="restaurantName">Name:</label>
+			<input id="nameInput" type="text" name="restaurantName" required="required">
+			<br>
+			<input id="addBtn" type="submit" value="Add">
+			<a id="cancel" href="{{url_for('showAllRestaurants')}}">Cancel</a>
+		</form>
+	</div>
+</body>
+</html>

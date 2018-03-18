@@ -1,6 +1,6 @@
 # Restaurants Catalog Simple App
 
-A **Flask** example that represents the fundamental usage of **ORM (SQLAlchemy)** and the basic **CRUD operations** using **Python 3.5**. The example is 100% responsive since i have applied the **responsive pattern Flex**. 
+A **Flask** example that represents the fundamental usage of **ORM (SQLAlchemy)** and the basic **CRUD operations** using **Python 3.5**. The example is 100% responsive since i have adopted the **responsive pattern Flex**. 
 
 ![Starting Screen](https://github.com/KawtharE/RestaurantsCatalog/blob/master/assets/Screencast_2018-03-17_18_30_50.gif)
 
@@ -111,9 +111,9 @@ Now inside this folder, we need to create eight html files, for each page we nee
 
 **Setup a Database.**
 
-For this step, we need to create new file *database_setup.py* that will contain four part:
+For this step, we need to create new file *database_setup.py* that will contain four parts:
 
-   **-Configuration:** which is the section concerning importing all the necessary modules and creating an instance of *declarative_base* class, this instance will let SQLAlchemy know that our classes correspond tables in our database. 
+   **-Configuration:** which is the section concerning importing all the necessary modules and creating an instance of *declarative_base* class, this instance will let SQLAlchemy know that our classes correspond to tables in our database. 
    
    **-Class code:** which we use to represent our tables as python classes, those classes have to extend the instance class of declarative_base class in order to extend all of its features.  
    
@@ -190,13 +190,13 @@ At this stage we are going to replace all those return messages to render templa
 
 **Create a new Restaurant:** 
 
-By importing the **request** library from the flask module we can test the method used (POST or GET) using the **request.method** and in case it's POST we can use the **request.form['nameOfTheInputField']** to read the value entred in the form. Now by calling **Restaurant(name=request.form['restaurantName'])** we are creating new instance of the Restaurant class that gonna be saved in restaurant table in our database, next by calling **session.add(..)** we are adding the new instance to database but we still need to call **session.commit()** to add the instance to our database **permanently**. Note that **session** is an instance of **DBSession** wich is an instance of **sessionmaker** which is in fact an interface that SQLAlchemy uses to execute database operations. So in order to make any changes to a database we just need to call a method from the session instance. 
+By importing the **request** library from the flask module we can test the method used (POST or GET) using the **request.method** method and in case it's POST we can use the **request.form['nameOfTheInputField']** to read the value entred in the form. Now by calling **Restaurant(name=request.form['restaurantName'])** we are creating new instance of the Restaurant class that' going to be saved in the restaurant table in our database, next by calling **session.add(..)** we are adding the new instance to the database, but we still need to call **session.commit()** to add the instance to our database **permanently**. Note that **session** is an instance of **DBSession** wich is an instance of **sessionmaker** which is in fact an interface that SQLAlchemy uses to execute database operations. So in order to make any changes to a database we just need to call a method from the session instance. 
 
-Finally we are using **redirect** method wich is imported from the **flask** module to redirect to the URL we are passing on argument, this argument (the URL) is the result of the execution the function **url_for('methodName', urlArgs)** which is also imported from the flask module and which return the URL that uses the method passed on argument. **url_for** is a good way to generate URLs all around in the application so if we want to change the URL we just change once. 
+Finally, we are using **redirect** method which is imported from the **flask** module to redirect to the URL we are passing on argument, this argument (the URL) is the result of the execution of the function **url_for('methodName', urlArgs)** which is also imported from the flask module and which return the URL that uses the method passed on argument. **url_for** is a good way to generate URLs all around in the application so if we want to change the URL we just change it once. 
 
-Now if the request is a **GET** request, we just call **render_template('nameOfTemplate.html', args)** which is also come from the flask module, to render a related template, args are parameters passed from the python code to be used or displayed in HTML file, this called **HTML Escaping** there are two ways to do this either to execute python code in HTML using the keyword **{%...%}** or to display python variables in HTML using the keyword **{{...}}**.  
+Now if the request is a **GET** request, we just call **render_template('nameOfTemplate.html', args)** which is also come from the flask module, to render a related template, args are parameters passed from the python code to be used or displayed in HTML file, this called **HTML Escaping** there are two ways for this either to execute python code in HTML using the keyword **{%...%}** or to display python variables in HTML using the keyword **{{...}}**.  
 
-A good application will inform the user, when an action is successfully executed this will make the user experience much better. For this we gonna import a new method **flash** from **flask** module to display feedbacks whenever an operation is executed with success. First to call this method, we need to imported, then called just after the *session.commit()* function, it takes only the message as parameter: **flash('message to display')**. Next in the HTML file where we want the message to be displayed, we gonna call the function **get_flashed_messages()** which will return an array of messages from the python code to be displayed in the page:
+A good application will inform the user, when an action is successfully executed this will make the user experience much better. For this we are going to import a new method **flash** from **flask** module to display feedbacks whenever an operation is executed with success. First to call this method, we need to imported, then called just after the *session.commit()* function, it takes only the message as parameter: **flash('message to display')**. Next in the HTML file where we want the message to be displayed, we are going to call the function **get_flashed_messages()** which will return an array of messages from the python code to be displayed in the page:
 
       	{%with messages = get_flashed_messages()%}
 				{%if messages%}
@@ -208,7 +208,7 @@ A good application will inform the user, when an action is successfully executed
 				{%endif%}
 			{%endwith%}
 
-Python code for creating new restaurant:
+Python code for creating a new restaurant:
 
       @app.route('/restaurants/newRestaurant/', methods=['GET', 'POST'])
       def addNewRestaurant():
@@ -222,7 +222,7 @@ Python code for creating new restaurant:
             return render_template('newRestaurant.html')
 
 
-=> The process is similare for the reste of route.
+=> The process is similare for the reste of routes.
 
 ## Iteration 6
 

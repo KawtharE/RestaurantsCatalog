@@ -256,6 +256,10 @@ So in *project.py* file:
             'name': self.name
             }
             
+	    
+![Starting Screen](https://github.com/KawtharE/RestaurantsCatalog/blob/master/assets/Screenshot%20from%202018-03-18%2013-21-58.png)
+
+
 => Same for the MenuItem class if we want to return the menu items for each restaurant.
 
 ## Iteration 7
